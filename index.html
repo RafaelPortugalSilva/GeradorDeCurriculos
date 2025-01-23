@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Currículo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Gerador de Currículo</h1>
+    </header>
+
+    <div class="container">
+        <form id="resumeForm">
+            <div>
+                <label for="name">Nome Completo</label>
+                <input type="text" id="name" placeholder="Digite seu nome" maxlength="40" required>
+            </div>
+            <div>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail" maxlength="50" required>
+            </div>
+            <div>
+                <label for="phone">Telefone</label>
+                <input type="text" id="phone" placeholder="Digite seu telefone" maxlength="15"required>
+            </div>
+            <div>
+                <label for="portfolio">Link do Portfólio</label>
+                <input type="url" id="portfolio" placeholder="Digite o link do seu portfólio">
+            </div>
+            <div>
+                <label for="summary">Resumo Profissional</label>
+                <textarea id="summary" placeholder="Escreva um breve resumo sobre você" required></textarea>
+            </div>
+            <div>
+                <label for="experience">Experiência Profissional</label>
+                <textarea id="experience" placeholder="Descreva sua experiência profissional" required></textarea>
+            </div>
+            <div>
+                <label for="education">Educação</label>
+                <textarea id="education" placeholder="Detalhe sua formação acadêmica" required></textarea>
+            </div>
+            <div>
+                <label for="skills">Habilidades</label>
+                <textarea id="skills" placeholder="Liste suas principais habilidades" required></textarea>
+            </div>
+            <button type="button" onclick="generateResume()">Gerar Currículo</button>
+        </form>
+
+        <div id="resumeOutput" class="resume" style="display: none;">
+            <span id="outputName"></span>
+            <p><strong>E-mail:</strong> <span id="outputEmail"></span></p>
+            <p><strong>Telefone:</strong> <span id="outputPhone"></span></p>
+            <p><strong>Portfólio:</strong> <a href="#" id="outputPortfolio" target="_blank"></a></p>
+            <h3>Resumo Profissional</h3>
+            <p id="outputSummary"></p>
+            <h3>Experiência Profissional</h3>
+            <p id="outputExperience"></p>
+            <h3>Educação</h3>
+            <p id="outputEducation"></p>
+            <h3>Habilidades</h3>
+            <p id="outputSkills"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Rafael Alexandre Portugal e Silva</p>
+    </footer>
+</body>
+</html>
